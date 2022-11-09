@@ -15,6 +15,7 @@ class SocialButton extends StatelessWidget {
     return InkWell(
       onTap: onTap,
       child: Container(
+        constraints: const BoxConstraints(minWidth: 200, maxWidth: 300),
         height: 56,
         decoration: BoxDecoration(
             color: AppColors.shape,
