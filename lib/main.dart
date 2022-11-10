@@ -3,10 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:payflow/app_widget.dart';
 
 void main() {
-  runApp(AppFirebase());
+  runApp(const AppFirebase());
 }
 
 class AppFirebase extends StatefulWidget {
+  const AppFirebase({super.key});
+
   @override
   State<AppFirebase> createState() => _AppFirebaseState();
 }
