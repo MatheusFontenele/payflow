@@ -18,25 +18,31 @@ class SocialButton extends StatelessWidget {
         constraints: const BoxConstraints(minWidth: 200, maxWidth: 300),
         height: 56,
         decoration: BoxDecoration(
-            color: AppColors.shape,
-            borderRadius: BorderRadius.circular(8),
-            border: const Border.fromBorderSide(
-                BorderSide(color: AppColors.stroke))),
-        child: Row(children: [
-          Expanded(
+          color: AppColors.shape,
+          borderRadius: BorderRadius.circular(8),
+          border: const Border.fromBorderSide(
+            BorderSide(color: AppColors.stroke),
+          ),
+        ),
+        child: Row(
+          children: [
+            Expanded(
               flex: 1,
               child: Container(
                 decoration: const BoxDecoration(
-                    border: Border(
-                        right: BorderSide(color: AppColors.stroke, width: 2))),
+                  border: Border(
+                    right: BorderSide(color: AppColors.stroke, width: 2),
+                  ),
+                ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Image.asset(AppImage.googleIcon),
                   ],
                 ),
-              )),
-          Expanded(
+              ),
+            ),
+            Expanded(
               flex: 4,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -46,8 +52,10 @@ class SocialButton extends StatelessWidget {
                     style: AppTextStyles.buttonGray,
                   ),
                 ],
-              ))
-        ]),
+              ),
+            )
+          ],
+        ),
       ),
     );
   }

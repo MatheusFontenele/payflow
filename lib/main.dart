@@ -33,7 +33,7 @@ class _AppFirebaseState extends State<AppFirebase> {
         }
         //caso a conexao com firebase conclua com sucesso
         if (snapshot.connectionState == ConnectionState.done) {
-          return const AppWidget();
+          return AppWidget();
         }
         //caso a conecao com o firebase ainda esteja em progresso
         return const Material(

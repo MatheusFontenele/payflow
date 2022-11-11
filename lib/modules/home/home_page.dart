@@ -70,7 +70,12 @@ class _HomePageState extends State<HomePage> {
             style: BorderStyle.solid,
           ),
         ),
-        onPressed: () {},
+        onPressed: () {
+          Navigator.pushNamed(
+            context,
+            "/barcode_scanner",
+          );
+        },
         elevation: 0,
         highlightElevation: 0,
         backgroundColor: AppColors.primary,
@@ -94,11 +99,29 @@ class _HomePageState extends State<HomePage> {
               color: AppColors.primary,
             ),
             IconButton(
+              padding: const EdgeInsets.only(right: 30),
               onPressed: () {
                 homeController.setPage(1);
                 setState(() {});
               },
               icon: const Icon(Icons.description_outlined),
+              color: AppColors.body,
+            ),
+            IconButton(
+              padding: const EdgeInsets.only(left: 30),
+              onPressed: () {
+                homeController.setPage(2);
+                setState(() {});
+              },
+              icon: const Icon(Icons.description_outlined),
+              color: AppColors.body,
+            ),
+            IconButton(
+              onPressed: () {
+                homeController.setPage(3);
+                setState(() {});
+              },
+              icon: const Icon(Icons.settings),
               color: AppColors.body,
             ),
           ],
