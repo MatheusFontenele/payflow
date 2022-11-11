@@ -21,8 +21,6 @@ class AppWidget extends StatelessWidget {
         "/home": (context) => const HomePage(),
         "/login": (context) => const LoginPage()
       },
-      //LoginPage()
-      //SplashPage()
     );
   }
 }

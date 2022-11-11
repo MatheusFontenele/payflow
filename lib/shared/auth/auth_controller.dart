@@ -20,16 +20,24 @@ class AuthController {
 
   Future<void> saveUser(UserModel user) async {
     final sharedPreferenceInstace = await SharedPreferences.getInstance();
-    await sharedPreferenceInstace.setString("user", user.toJson());
+    await sharedPreferenceInstace.setString(
+      "user",
+      user.toJson(),
+    );
     return;
   }
 
   Future<void> currentUser(BuildContext context) async {
-    await Future.delayed(const Duration(seconds: 2));
+    await Future.delayed(
+      const Duration(seconds: 2),
+    );
     final sharedPreferenceInstace = await SharedPreferences.getInstance();
     if (sharedPreferenceInstace.containsKey("user")) {
       final userJson = sharedPreferenceInstace.get("user") as String;
-      setUser(context, UserModel.fromJson(userJson));
+      setUser(
+        context,
+        UserModel.fromJson(userJson),
+      );
       return;
     }
     setUser(context, null);

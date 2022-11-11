@@ -18,26 +18,30 @@ class _AppFirebaseState extends State<AppFirebase> {
   @override
   Widget build(BuildContext context) {
     return FutureBuilder(
-        future: _initialization,
-        builder: (context, snapshot) {
-          //caso a conexao com o firebas falhe
-          if (snapshot.hasError) {
-            return const Material(
-              child: Center(
-                  child: Text(
+      future: _initialization,
+      builder: (context, snapshot) {
+        //caso a conexao com o firebas falhe
+        if (snapshot.hasError) {
+          return const Material(
+            child: Center(
+              child: Text(
                 "Nao foi possivel iniciar o FireBase",
                 textDirection: TextDirection.ltr,
-              )),
-            );
-          }
-          //caso a conexao com firebase conclua com sucesso
-          if (snapshot.connectionState == ConnectionState.done) {
-            return const AppWidget();
-          }
-          //caso a conecao com o firebase ainda esteja em progresso
-          return const Material(
-            child: Center(child: CircularProgressIndicator()),
+              ),
+            ),
           );
-        });
+        }
+        //caso a conexao com firebase conclua com sucesso
+        if (snapshot.connectionState == ConnectionState.done) {
+          return const AppWidget();
+        }
+        //caso a conecao com o firebase ainda esteja em progresso
+        return const Material(
+          child: Center(
+            child: CircularProgressIndicator(),
+          ),
+        );
+      },
+    );
   }
 }
