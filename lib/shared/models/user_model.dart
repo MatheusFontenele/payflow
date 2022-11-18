@@ -26,7 +26,10 @@ class UserModel {
       );
 
   //metodo para retornar os dados do model
-  Map<String, dynamic> toMap() => {"name": name, "profilePhoto": profilePhoto};
+  Map<String, dynamic> toMap() => {
+        "name": name,
+        "profilePhoto": profilePhoto,
+      };
 
   //tranforma os dados vindos do map em um json
   //essa funcao foi criado porque ao salvar os dados no shared preference esta pra aceitar uma string
