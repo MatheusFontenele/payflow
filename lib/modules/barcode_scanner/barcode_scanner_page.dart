@@ -3,8 +3,6 @@ import 'package:payflow/shared/themes/app_colors.dart';
 import 'package:payflow/shared/themes/app_text_styles.dart';
 import 'package:payflow/shared/widgets/set_label_button/set_label_buttons.dart';
 
-import '../../shared/widgets/botton_sheet/botton_sheet_widget.dart';
-
 class BarcodeScannerPage extends StatefulWidget {
   const BarcodeScannerPage({Key? key}) : super(key: key);
 
@@ -23,46 +21,50 @@ class _BarcodeScannerPageState extends State<BarcodeScannerPage> {
     //   secondaryLabel: "Digitar código",
     //   secondaryOnPressed: () => {},
     // );
-    return RotatedBox(
-      quarterTurns: 1,
-      child: SafeArea(
-        child: Scaffold(
-            appBar: AppBar(
-              centerTitle: true,
-              backgroundColor: Colors.black,
-              title: Text(
-                "Escaneie o codigo de barras do boleto",
-                style: AppTextStyles.buttonBackground,
-              ),
-              leading: const BackButton(color: AppColors.background),
-            ),
-            body: Column(
-              children: [
-                Expanded(
-                  child: Container(
-                    color: Colors.black.withOpacity(0.7),
+    return Stack(
+      children: [
+        RotatedBox(
+          quarterTurns: 1,
+          child: SafeArea(
+            child: Scaffold(
+                appBar: AppBar(
+                  centerTitle: true,
+                  backgroundColor: Colors.black,
+                  title: Text(
+                    "Escaneie o codigo de barras do boleto",
+                    style: AppTextStyles.buttonBackground,
                   ),
+                  leading: const BackButton(color: AppColors.background),
                 ),
-                Expanded(
-                  flex: 2,
-                  child: Container(
-                    color: Colors.transparent,
-                  ),
+                body: Column(
+                  children: [
+                    Expanded(
+                      child: Container(
+                        color: Colors.black.withOpacity(0.7),
+                      ),
+                    ),
+                    Expanded(
+                      flex: 2,
+                      child: Container(
+                        color: Colors.transparent,
+                      ),
+                    ),
+                    Expanded(
+                      child: Container(
+                        color: Colors.black.withOpacity(0.7),
+                      ),
+                    )
+                  ],
                 ),
-                Expanded(
-                  child: Container(
-                    color: Colors.black.withOpacity(0.7),
-                  ),
-                )
-              ],
-            ),
-            bottomNavigationBar: SetLabelButtons(
-              primaryLabel: "Inserir codigo do boleto",
-              primaryOnPressed: () => {},
-              secondaryLabel: "Buscar boleto na galeria",
-              secondaryOnPressed: () {},
-            )),
-      ),
+                bottomNavigationBar: SetLabelButtons(
+                  primaryLabel: "Inserir codigo do boleto",
+                  primaryOnPressed: () => {},
+                  secondaryLabel: "Buscar boleto na galeria",
+                  secondaryOnPressed: () {},
+                )),
+          ),
+        ),
+      ],
     );
   }
 }

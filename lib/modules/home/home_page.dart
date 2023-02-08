@@ -105,7 +105,7 @@ class _HomePageState extends State<HomePage> {
                 homeController.setPage(1);
                 setState(() {});
               },
-              icon: const Icon(Icons.description_outlined),
+              icon: const Icon(Icons.wallet),
               color: AppColors.body,
             ),
             IconButton(
@@ -114,7 +114,7 @@ class _HomePageState extends State<HomePage> {
                 homeController.setPage(2);
                 setState(() {});
               },
-              icon: const Icon(Icons.description_outlined),
+              icon: const Icon(Icons.notifications),
               color: AppColors.body,
             ),
             IconButton(
@@ -122,7 +122,7 @@ class _HomePageState extends State<HomePage> {
                 homeController.setPage(3);
                 setState(() {});
               },
-              icon: const Icon(Icons.settings),
+              icon: const Icon(Icons.menu),
               color: AppColors.body,
             ),
           ],

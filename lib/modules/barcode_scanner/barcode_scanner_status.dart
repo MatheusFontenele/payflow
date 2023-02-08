@@ -1,30 +1,30 @@
 import 'package:camera/camera.dart';
 
-class BarCodeScannerStatus {
+class BarcodeScannerStatus {
   final bool isCameraAvailable;
   final String error;
   final String barcode;
 
   CameraController? cameraController;
 
-  BarCodeScannerStatus({
+  BarcodeScannerStatus({
     this.isCameraAvailable = false,
     this.cameraController,
     this.barcode = "",
     this.error = "",
   });
 
-  factory BarCodeScannerStatus.available(CameraController cameraController) =>
-      BarCodeScannerStatus(
+  factory BarcodeScannerStatus.available(CameraController cameraController) =>
+      BarcodeScannerStatus(
         isCameraAvailable: true,
         cameraController: cameraController,
       );
 
-  factory BarCodeScannerStatus.error(String message) =>
-      BarCodeScannerStatus(error: message);
+  factory BarcodeScannerStatus.error(String message) =>
+      BarcodeScannerStatus(error: message);
 
-  factory BarCodeScannerStatus.barcode(String barcode) =>
-      BarCodeScannerStatus(barcode: barcode);
+  factory BarcodeScannerStatus.barcode(String barcode) =>
+      BarcodeScannerStatus(barcode: barcode);
 
   //valida se a camera pode ser habilitada
   bool get canShowCamera => isCameraAvailable && error.isEmpty;
