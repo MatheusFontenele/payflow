@@ -21,7 +21,7 @@ class _AppFirebaseState extends State<AppFirebase> {
     return FutureBuilder(
       future: _initialization,
       builder: (context, snapshot) {
-        //caso a conexao com o firebas falhe
+        //caso a conexao com o firebase falhe
         if (snapshot.hasError) {
           return const Material(
             child: Center(

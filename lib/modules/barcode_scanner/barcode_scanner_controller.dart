@@ -8,6 +8,7 @@ import 'barcode_scanner_status.dart';
 class BarcodeScannerController {
   final statusNotifier =
       ValueNotifier<BarcodeScannerStatus>(BarcodeScannerStatus());
+
   BarcodeScannerStatus get status => statusNotifier.value;
   set status(BarcodeScannerStatus status) => statusNotifier.value = status;
 
@@ -38,7 +39,7 @@ class BarcodeScannerController {
         }
       }
       final barcodes = await barcodeScanner.processImage(inputImage);
-      var barcode;
+      String? barcode;
       for (Barcode item in barcodes) {
         barcode = item.displayValue;
       }
@@ -88,9 +89,7 @@ class BarcodeScannerController {
               Size(cameraImage.width.toDouble(), cameraImage.height.toDouble());
           const InputImageRotation imageRotation =
               InputImageRotation.rotation0deg;
-          final InputImageFormat inputImageFormat =
-              InputImageFormatMethods.fromRawValue(cameraImage.format.raw) ??
-                  InputImageFormat.nv21;
+          const InputImageFormat inputImageFormat = InputImageFormat.yuv420;
           final planeData = cameraImage.planes.map(
             (Plane plane) {
               return InputImagePlaneMetadata(

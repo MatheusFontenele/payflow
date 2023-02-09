@@ -8,10 +8,10 @@ class AuthController {
 
   UserModel? get user => _user;
 
-  void setUser(BuildContext context, UserModel? user) {
+  Future<void> setUser(BuildContext context, UserModel? user) async {
     if (user != null) {
       _user = user;
-      saveUser(user);
+      await saveUser(user);
       Navigator.pushReplacementNamed(context, "/home");
       return;
     }
