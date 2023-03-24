@@ -1,6 +1,6 @@
 # payflow
 
-A new Flutter project.
+A new Flutter project nlw project, to create a payments app
 
 ## Getting Started
 
