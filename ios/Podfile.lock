@@ -1,0 +1,33 @@
+PODS:
+  - FirebaseCore (11.0.0):
+    - FirebaseCoreInternal (~> 11.0)
+    - GoogleUtilities/Environment (~> 8.0)
+    - GoogleUtilities/Logger (~> 8.0)
+  - FirebaseCoreInternal (11.0.0):
+    - "GoogleUtilities/NSData+zlib (~> 8.0)"
+  - GoogleUtilities/Environment (8.0.1):
+    - GoogleUtilities/Privacy
+  - GoogleUtilities/Logger (8.0.1):
+    - GoogleUtilities/Environment
+    - GoogleUtilities/Privacy
+  - "GoogleUtilities/NSData+zlib (8.0.1)":
+    - GoogleUtilities/Privacy
+  - GoogleUtilities/Privacy (8.0.1)
+
+DEPENDENCIES:
+  - FirebaseCore
+
+SPEC REPOS:
+  trunk:
+    - FirebaseCore
+    - FirebaseCoreInternal
+    - GoogleUtilities
+
+SPEC CHECKSUMS:
+  FirebaseCore: 3cf438f431f18c12cdf2aaf64434648b63f7e383
+  FirebaseCoreInternal: cac45dbc4824e152fe93cdd5dd46bd503c3fdffb
+  GoogleUtilities: 52f677b52b0d2bed24e7b9c94455b1f7353a09f8
+
+PODFILE CHECKSUM: b151c7a32728b16a7fb9bc507d3c279233ee0404
+
+COCOAPODS: 1.14.2

@@ -1,0 +1,10 @@
+# platform :ios, '10.0'
+
+flutter_root = File.expand_path('..', File.dirname(__FILE__))
+
+target 'Runner' do
+  use_frameworks!
+  use_modular_headers!
+  pod 'FirebaseCore', :modular_headers => true 
+
+end
